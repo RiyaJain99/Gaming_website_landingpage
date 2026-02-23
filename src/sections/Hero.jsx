@@ -21,20 +21,24 @@ export default function Hero() {
       ref={sectionRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
+
       {/* ================= BACKGROUND LAYER ================= */}
-      <motion.div style={{ y, scale }} className="absolute inset-0 w-full h-full">
+      {/* ✅ Added z-0 */}
+      <motion.div
+        style={{ y, scale }}
+        className="absolute inset-0 w-full h-full z-0"
+      >
 
         {/* 🎬 VIDEO BACKGROUND */}
         <video
-  autoPlay
-  muted
-  loop
-  playsInline
-  controls
-  className="w-full h-full object-cover"
->
-  <source src="/videos/trailer.mp4" type="video/mp4" />
-</video>
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover brightness-75 contrast-110"
+        >
+          <source src="/videos/trailer.mp4" type="video/mp4" />
+        </video>
 
         {/* 🌌 Gradient glow overlay */}
         <div
@@ -42,8 +46,7 @@ export default function Hero() {
           style={{
             background: `
               radial-gradient(ellipse 80% 60% at 70% 40%, rgba(191,95,255,0.25) 0%, transparent 60%),
-              radial-gradient(ellipse 60% 80% at 20% 70%, rgba(0,212,255,0.2) 0%, transparent 60%),
-              radial-gradient(ellipse 100% 100% at 50% 50%, #0d0621 0%, #050816 70%, #000000 100%)
+              radial-gradient(ellipse 60% 80% at 20% 70%, rgba(0,212,255,0.2) 0%, transparent 60%)
             `,
           }}
         />
@@ -60,6 +63,7 @@ export default function Hero() {
               <stop offset="0%" stopColor="#1a0a2e" stopOpacity="0.9" />
               <stop offset="100%" stopColor="#050816" stopOpacity="1" />
             </linearGradient>
+
             <linearGradient id="glowLine" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#bf5fff" stopOpacity="0" />
               <stop offset="30%" stopColor="#bf5fff" stopOpacity="0.8" />
@@ -73,13 +77,20 @@ export default function Hero() {
             fill="url(#cityGrad)"
           />
 
-          <line x1="0" y1="280" x2="1440" y2="280" stroke="url(#glowLine)" strokeWidth="1.5" />
+          <line
+            x1="0"
+            y1="280"
+            x2="1440"
+            y2="280"
+            stroke="url(#glowLine)"
+            strokeWidth="1.5"
+          />
         </svg>
       </motion.div>
 
-      {/* ===== DARK OVERLAYS ===== */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#050816] via-transparent to-transparent z-10" />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-10" />
+      {/* ===== DARK OVERLAYS (Reduced opacity) ===== */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#050816]/40 via-transparent to-transparent z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-transparent z-10" />
 
       {/* ===== PARTICLES ===== */}
       <div className="absolute inset-0 z-20">
@@ -91,7 +102,6 @@ export default function Hero() {
         style={{ opacity }}
         className="relative z-30 text-center px-4 sm:px-8 max-w-5xl mx-auto"
       >
-        {/* Title */}
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -101,12 +111,10 @@ export default function Hero() {
           <span className="shimmer-text">AETHERON</span>
         </motion.h1>
 
-        {/* Subtitle */}
         <p className="font-display text-lg tracking-[0.4em] text-neon-blue/80 mb-6 uppercase">
           Rise of the Infinite Realm
         </p>
 
-        {/* CTA */}
         <a
           href="#preregister"
           className="inline-block px-8 py-4 font-display text-sm font-black uppercase tracking-widest text-white rounded-xl bg-gradient-to-r from-purple-500 via-indigo-500 to-cyan-400 hover:scale-105 transition"
@@ -122,11 +130,15 @@ export default function Hero() {
         transition={{ delay: 1.5 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-1"
       >
-        <span className="text-xs uppercase tracking-[0.3em] text-slate-500">Scroll</span>
+        <span className="text-xs uppercase tracking-[0.3em] text-slate-500">
+          Scroll
+        </span>
+
         <motion.div animate={{ y: [0, 6, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>
           <ChevronDown className="w-5 h-5 text-slate-500" />
         </motion.div>
       </motion.div>
+
     </section>
   )
 }
