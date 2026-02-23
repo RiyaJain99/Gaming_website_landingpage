@@ -65,7 +65,7 @@
 
 <div align="center">
 
-<a href="https://YOUR-VERCEL-LINK.vercel.app">
+<a href="https://gaming-website-landingpage-5u9xjxgeo.vercel.app/">
 
 <img src="https://img.shields.io/badge/ENTER_THE_PORTAL-AETHERON-purple?style=for-the-badge&logo=vercel&logoColor=white"/>
 
