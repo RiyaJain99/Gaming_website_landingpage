@@ -28,6 +28,7 @@ export default function Trailer() {
 
   return (
     <section id="trailer" className="relative py-24 md:py-32 overflow-hidden">
+
       {/* Ambient glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-neon-purple/8 blur-[120px] pointer-events-none" />
 
@@ -38,6 +39,7 @@ export default function Trailer() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
+
           {/* Section heading */}
           <SectionLabel text="Official Reveal" />
 
@@ -70,47 +72,18 @@ export default function Trailer() {
             {/* Glow border */}
             <div className="absolute inset-0 rounded-2xl border border-neon-purple/30 z-10 pointer-events-none" />
 
-            {/* 🎬 LOCAL VIDEO PLAYER */}
+            {/* 🎬 TRAILER VIDEO */}
             <div className="w-full aspect-video bg-black">
-             <video
-  src="/videos/trailer.mp4"
-  controls
-  autoPlay
-  muted
-  loop
-  className="w-full rounded-xl"
-/>
+              <video
+                controls
+                className="w-full h-full object-cover rounded-2xl"
+              >
                 <source src="/videos/trailer.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
           </motion.div>
 
-          {/* ================= STATS ================= */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-10 grid grid-cols-3 gap-4 max-w-lg mx-auto"
-          >
-            {[
-              { value: '50M+', label: 'Views' },
-              { value: '4.9★', label: 'Rating' },
-              { value: '180+', label: 'Countries' },
-            ].map((stat) => (
-              <div
-                key={stat.label}
-                className="text-center glass-card rounded-xl py-4 px-2"
-              >
-                <div className="font-display font-black text-xl text-white">
-                  {stat.value}
-                </div>
-                <div className="font-body text-xs text-slate-500 uppercase tracking-widest mt-0.5">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </motion.div>
         </motion.div>
       </div>
     </section>
