@@ -72,10 +72,14 @@ export default function Trailer() {
 
             {/* 🎬 LOCAL VIDEO PLAYER */}
             <div className="w-full aspect-video bg-black">
-              <video
-                controls
-                className="w-full h-full object-cover rounded-2xl"
-              >
+             <video
+  src="/videos/trailer.mp4"
+  controls
+  autoPlay
+  muted
+  loop
+  className="w-full rounded-xl"
+/>
                 <source src="/videos/trailer.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>

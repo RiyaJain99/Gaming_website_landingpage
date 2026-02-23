@@ -25,15 +25,9 @@ export default function Hero() {
       <motion.div style={{ y, scale }} className="absolute inset-0 w-full h-full">
 
         {/* 🎬 VIDEO BACKGROUND */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-40"
-        >
-          <source src="/videos/trailer.mp4" type="video/mp4" />
-        </video>
+        <video autoPlay muted loop controls>
+  <source src="/videos/trailer.mp4" type="video/mp4" />
+</video>
 
         {/* 🌌 Gradient glow overlay */}
         <div
