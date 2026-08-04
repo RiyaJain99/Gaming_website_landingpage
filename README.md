@@ -16,6 +16,24 @@
 
 </div>
 
+<div align="center">
+
+<a href="https://gaming-website-landingpage-5u9xjxgeo.vercel.app/" target="_blank">
+
+<img src="https://img.shields.io/badge/🎮_Play_Now-AETHERON-8A2BE2?style=for-the-badge&logo=vercel&logoColor=white"/>
+
+</a>
+
+<br><br>
+
+### 🔗 Live Project
+
+**https://gaming-website-landingpage-5u9xjxgeo.vercel.app/**
+
+Experience the futuristic anime game landing page with immersive animations, responsive design, and a Supabase-powered backend.
+
+</div>
+
 ---
 
 <div align="center">
